@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AASTHA</title>
+  <!-- font awesome 5 link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+    rel="stylesheet">
+
+  <!-- bootstrap4 cdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/UpdateProfile.css">
+  <link rel="stylesheet" href="/public/css/navbar.css">
+</head>
+
+<body>
+
+    <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#!">AASTHA</a>
+          </div>
+          <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+              <li>
+                <a href="/dashboard">Home</a>
+              </li>
+              <li>
+                <a href="#!">About</a>
+              </li>
+              <li>
+                <a href="#!">Add Blood Request</a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="/my-profile/my-request">My Request</a>
+                  </li>
+                  <li>
+                    <a href="/request-feed">Request Feed</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!">Search</a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="/search-donor">Search Donor</a>
+                  </li>
+                  <li>
+                    <a href="#!">Search Organization</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!"><%= username %></a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="/my-profile">My Profile</a>
+                  </li>
+                  <li>
+                    <a href="#!">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+  <section class="h-100 bg-light">
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="/public/img/chgpass.png" alt="Sample photo" class="img-fluid" alt="Responsive image"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; object-fit: cover;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-3 mt-5 text-uppercase">CHANGE PASSWORD</h3>
+
+                  <div class="input-container lname">
+                    <input id="email" name="email" placeholder="Current Password" type="text">
+                  </div>
+
+                  <div class="input-container lname">
+                    <input id="email" name="email" placeholder="New Password" type="text">
+                  </div>
+
+                  <div class="input-container lname">
+                    <input id="email" name="email" placeholder="Confirm Password" type="text">
+                  </div>
+
+
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                      <button type="submit" class="btn2 color-danger" style>Submit</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact us">
+    <div class="w3r-zig-zag"></div>
+  </section>
+
+  <div class="cont_us">
+    <h3 class="text-center font-weight-bold">Do you have any question?</h3>
+    <h4 class="text-center font-weight-md">Contact us we are always here to help</h4>
+    <div class="col-lg-7 text-lg-right color-white">
+      <a href="/" class="cul">Home</a>
+      <a href="https://badhanfoundation.org/"><i class="fab fa-facebook cul"></i></a>
+      <a href="https://www.youtube.com/watch?v=kOISEM6L4xk&ab_channel=WorldHealthOrganization%28WHO%29"><i
+          class="fab fa-youtube cul"></i></a>
+      <a href="https://www.instagram.com/barackobama/"><i class="fab fa-instagram cul"></i></a>
+      <a href="https://twitter.com/elonmusk"><i class="fab fa-twitter cul"></i></a>
+    </div>
+    <h1 class="cpwrt">&copy; Copyright AASTHA</h1>
+  </div>
+
+
+
+  <!-- bootstrap js, jquery, popper -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+<script>
+    (function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+      $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // Close one dropdown when selecting another
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+      });
+      // Clicking away from dropdown will remove the dropdown class
+      $('html').click(function() {
+        $('.nav-dropdown').hide();
+      });
+      // Toggle open and close nav styles on click
+      $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+      });
+      // Hamburger to X toggle
+      $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+      });
+    }); // end DOM ready
+  })(jQuery); // end jQuery
+  </script>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AASTHA</title>
+    <!-- font awesome 5 link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap4 cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <link rel="stylesheet" href="/public/css/view_donation.css">
+</head>
+
+<body>
+
+
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#!">AASTHA</a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#!">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#!">Search</a>
+                        <ul class="nav-dropdown">
+                            <li>
+                                <a href="#!">Search Donors</a>
+                            </li>
+                            <li>
+                                <a href="#!">Search Organizations</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#!">Request for Blood</a>
+                        <ul class="nav-dropdown">
+                            <li>
+                                <a href="#!">My Request</a>
+                            </li>
+                            <li>
+                                <a href="#!">Request Feed</a>
+                            </li>
+                            <li>
+                                <a href="#!">Add Request</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                <a href="#!">Pricing</a>
+              </li> -->
+                    <li>
+                        <a href="#!">Profile</a>
+                        <ul class="nav-dropdown">
+                            <li>
+                                <a href="#!">My Profile</a>
+                            </li>
+                            <li>
+                                <a href="#!">Change Password</a>
+                            </li>
+                            <li>
+                                <a href="#!">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
+    <div class="col mt-5 justify-content-center">
+        <div class="text-center card-box">
+            <div class="member-card">
+                <div class="thumb-lg member-thumb mx-auto"><img src="/public/img/uploaded_imgs/<%=user.img%>"
+                        class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                <div class="mt-2 text-bold">
+                    <h4>
+                        <%=user.fname%>
+                            <%=user.lname%>
+                    </h4>
+                </div>
+                <div class="mt-4 mb-4">
+                    <h5>Patient's Name : <%=data.pname%>
+                    </h5>
+                    <h5>Emergency Name : <%=data.cname%>
+                    </h5>
+                    <h5>Contact Number : <%=data.c_number%>
+                    </h5>
+                    <h5>Location: <%=data.organization%>,<%=data.address%>
+                    </h5>
+                    <h5>Date of donation: <%=data.date.toLocaleDateString('el-GR')%>
+                    </h5>
+                    <% if(data.complications!='' ){ %>
+                        <h5>Complications: <%=data.complications%>
+                        </h5>
+                        <%}%>
+                </div>
+                <form action="/my-profile/my-donation/view/edit/<%=data.id%>"  method="post">
+                    <button  class="btn-don btn-danger btn-rounded">Edit</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">Aastha is an energency blood-bank management system that helps people to
+                        find out nearby blood-banks according to their needs as well as connects them with the donors.
+                    </p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/category/c-language/">About Blood</a></li>
+                        <li><a href="http://scanfcode.com/category/front-end-development/">Organizations</a></li>
+                        <li><a href="http://scanfcode.com/category/back-end-development/">Donors</a></li>
+                        <li><a href="http://scanfcode.com/category/java-programming-language/">Eligibility</a></li>
+                        <!-- <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                <li><a href="http://scanfcode.com/category/templates/">Templates</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                        <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                        <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                        <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                        <a href="#">AASTHA</a>.
+                    </p>
+                </div>
+
+
+
+                <!-- bootstrap js, jquery, popper -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<script>
+
+    function _(element) {
+        return document.getElementById(element);
+    }
+
+    function fetch_data(parent_element, child_element, type) {
+        fetch('/update-profile/get_data?type=' + type + '&parent_value=' + parent_element.value + '').then(
+            function (response) {
+                return response.json();
+
+            }).then(function (responseData) {
+                var html = '';
+
+                if (type == 'load_district') {
+                    html = '<option disabled selected value="">District</option>';
+                }
+                if (type == 'load_city') {
+                    html = '<option disabled selected value="">City</option>';
+                }
+                for (var count = 0; count < responseData.length; count++) {
+                    html += '<option value="' + responseData[count] + '">' + responseData[count] + '</option>';
+                }
+
+                child_element.innerHTML = html;
+            });
+    }
+    _('division').onchange = function () {
+
+        fetch_data(_('division'), _('district'), 'load_district');
+
+    };
+
+    _('district').onchange = function () {
+
+        fetch_data(_('district'), _('city'), 'load_city');
+
+    };
+
+
+</script>
+
+<script>
+    (function ($) { // Begin jQuery
+        $(function () { // DOM ready
+            // If a link has a dropdown, add sub menu toggle.
+            $('nav ul li a:not(:only-child)').click(function (e) {
+                $(this).siblings('.nav-dropdown').toggle();
+                // Close one dropdown when selecting another
+                $('.nav-dropdown').not($(this).siblings()).hide();
+                e.stopPropagation();
+            });
+            // Clicking away from dropdown will remove the dropdown class
+            $('html').click(function () {
+                $('.nav-dropdown').hide();
+            });
+            // Toggle open and close nav styles on click
+            $('#nav-toggle').click(function () {
+                $('nav ul').slideToggle();
+            });
+            // Hamburger to X toggle
+            $('#nav-toggle').on('click', function () {
+                this.classList.toggle('active');
+            });
+        }); // end DOM ready
+    })(jQuery); // end jQuery
+</script>

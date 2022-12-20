@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AASTHA</title>
+  <!-- font awesome 5 link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap"
+    rel="stylesheet">
+
+  <!-- bootstrap4 cdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/UpdateProfile.css">
+  <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/footer.css">
+</head>
+
+<body>
+
+  <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">AASTHA</a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="/organization">Search Organizations</a>
+          </li>
+          <li>
+            <a href="/aboutus">About Us</a>
+          </li>
+          <li>
+            <a href="/signup">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="h-100 bg-light">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block addblkimg img">
+                <img src="/public/img/5.jpg" alt="Sample photo" class="img-fluid" alt="Responsive image"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Upload YOUR PROFILE</h3>
+
+                  <form action="" method="post" enctype="multipart/form-data">
+                    <div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="file" name="upload_image"  accept="image/png, image/jpeg, image/jpg"/>
+                            <label for="form3Example3" class="col control-label">Profile Image</label>
+                        </div>
+                    </div>           
+                
+                    <h6 class="mb-2">Personal Details</h6>
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <div class="form-outline">
+                          <input id="fname" name="fname" placeholder="First Name" type="text" value="<%=user[0].fname%>" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <div class="form-outline">
+                          <input id="lname" name="lname" placeholder="Last Name" type="text" value="<%=user[0].lname%>">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="input-container lname">
+                        <input id="contact" name="contact" placeholder="Contact Number (+88)" type="tel" required>
+                    </div> -->
+
+                    <div class="input-container">
+                      <input id="c_number" name="c_number" placeholder="Contact Number (+88)" type="text" >
+                    </div>
+
+                    <div class="input-container">
+                      <input id="email" name="email" placeholder="Email Address" type="text" value="<%=user[0].email%>" readonly>
+                    </div>
+
+                    <div class="form-outline">
+                      <select name="profession" class="form-control" id="basic_bg" tabindex="-1"
+                        aria-hidden=" true" required>
+                        <option disabled selected value="">Profession</option>
+                        <option value="Student">Student</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Teacher">Teachee</option>
+                        <option value="Banker">Banker</option>
+                        <option value="Officer">Officer</option>
+                        <option value="Police">Police</option>
+                        <option value="Others">Others</option>
+                      </select>
+                    </div>
+
+                    <h6 class="mb-2">Blood Group</h6>
+                    <div class="form-outline">
+                      <select name="b_g" class="form-control" id="basic_bg" tabindex="-1"
+                        aria-hidden=" true" required>
+                        <option disabled selected value="">Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                      </select>
+                    </div>
+
+                    <h6 class="mb-2">Date of Birth</h6>
+                    <div class="form-outline mb-1">
+                      <input id="DOB" name="dob" type="date" style="margin-bottom: 0;" value="" required>
+                    </div>
+
+                    <div class="d-md-flex justify-content-start align-items-center mb-2 py-2">
+
+                      <h6 class="mb-0 me-4 mr-5 mt-3">Gender: </h6>
+
+                      <div class="form-check form-check-inline mb-0 me-4 mt-3">
+                        <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
+                        <label class="form-check-label" for="femaleGender">Female</label>
+                      </div>
+
+                      <div class="form-check form-check-inline mb-0 me-4 mt-3">
+                        <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                          value="Male" />
+                        <label class="form-check-label" for="maleGender">Male</label>
+                      </div>
+
+                      <div class="form-check form-check-inline mb-0 mt-3">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                          value="Other" />
+                        <label class="form-check-label" for="otherGender">Other</label>
+                      </div>
+
+                    </div>
+
+                    <h6 class="mb-2 mt-4">Address Details</h6>
+
+
+                    <div class="input-container">
+                      <input id="address" name="address" placeholder="House(Optional)" type="text">
+                    </div>
+
+                    <div class="input-container">
+                      <input id="street" name="street" placeholder="Street(Optional)" type="text">
+                    </div>
+
+                    <div class="input-container">
+                      <input id="zip" name="zip" placeholder="Zip Code(Optional)" type="text">
+                    </div>
+
+                    <div class="form-outline">
+                      <select name="division" class="form-control" id="division" tabindex="-1" aria-hidden=" true"
+                        required>
+                        <option disabled selected value="">Division</option>
+                        <% for(var count=0; count< division.length;count++) { %>
+                          <option value="<%= division[count].division %>">
+                            <%= division[count].division %>
+                          </option>
+                          <% } %>
+                      </select>
+                    </div>
+
+                    <div class="form-outline">
+                      <select name="district" class="form-control" id="district" tabindex="-1" aria-hidden=" true"
+                        required>
+                        <option disabled selected value="">District</option>
+
+                      </select>
+                    </div>
+
+                    <div class="form-outline">
+                      <select name="city" class="form-control" id="city" tabindex="-1" aria-hidden=" true" required>
+                        <option disabled selected value="">City</option>
+
+                      </select>
+                    </div>
+
+
+                    <!-- <div class="d-flex justify-content-end pt-3">
+                        <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                        <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                      </div> -->
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <div class="text-right">
+                        <button type="submit" class="btn2" style>Save
+                          Changes</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Aastha is an energency blood-bank management system that helps people to
+                    find out nearby blood-banks according to their needs as well as connects them with the donors.
+                </p>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/category/c-language/">About Blood</a></li>
+                    <li><a href="http://scanfcode.com/category/front-end-development/">Organizations</a></li>
+                    <li><a href="http://scanfcode.com/category/back-end-development/">Donors</a></li>
+                    <li><a href="http://scanfcode.com/category/java-programming-language/">Eligibility</a></li>
+                    <!-- <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li> -->
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                    <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                    <a href="#">AASTHA</a>.
+                </p>
+            </div>
+
+
+
+            <!-- bootstrap js, jquery, popper -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<script>
+(function ($) { // Begin jQuery
+    $(function () { // DOM ready
+        // If a link has a dropdown, add sub menu toggle.
+        $('nav ul li a:not(:only-child)').click(function (e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            // Close one dropdown when selecting another
+            $('.nav-dropdown').not($(this).siblings()).hide();
+            e.stopPropagation();
+        });
+        // Clicking away from dropdown will remove the dropdown class
+        $('html').click(function () {
+            $('.nav-dropdown').hide();
+        });
+        // Toggle open and close nav styles on click
+        $('#nav-toggle').click(function () {
+            $('nav ul').slideToggle();
+        });
+        // Hamburger to X toggle
+        $('#nav-toggle').on('click', function () {
+            this.classList.toggle('active');
+        });
+    }); // end DOM ready
+})(jQuery); // end jQuery
+</script>
+
+<script>
+var loader = document.getElementById("preloader");
+
+window.addEventListener("load", function () {
+loader.style.display = "none";
+})
+</script>
+
+
+<script>
+var loader = document.getElementById("preloader");
+
+window.addEventListener("load", function () {
+loader.style.display = "none";
+})
+</script>
+
+
+<script>
+
+  function _(element) {
+    return document.getElementById(element);
+  }
+
+  function fetch_data(parent_element, child_element, type) {
+    fetch('/update-profile/get_data?type=' + type + '&parent_value=' + parent_element.value + '').then(
+      function (response) {
+        return response.json();
+
+      }).then(function (responseData) {
+        var html = '';
+
+        if (type == 'load_district') {
+          html = '<option disabled selected value="">District</option>';
+        }
+        if (type == 'load_city') {
+          html = '<option disabled selected value="">City</option>';
+        }
+        for (var count = 0; count < responseData.length; count++) {
+          html += '<option value="' + responseData[count] + '">' + responseData[count] + '</option>';
+        }
+
+        child_element.innerHTML = html;
+      });
+  }
+  _('division').onchange = function () {
+
+    fetch_data(_('division'), _('district'), 'load_district');
+
+  };
+
+  _('district').onchange = function () {
+
+    fetch_data(_('district'), _('city'), 'load_city');
+
+  };
+
+
+</script>
