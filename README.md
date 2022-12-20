@@ -64,4 +64,4 @@ Please make sure to update tests as appropriate.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-Star it if you liked the project. For any kind of feedback reach us through linked in (link added in the contributors part).# AASTHA
+Star it if you liked the project. For any kind of feedback reach us through linked in (link added in the contributors part).
