@@ -38,7 +38,7 @@ localhost:<YOUR_PORT_NUMBER>
 
 [Rakin Abrar](https://github.com/Rakin126)
 
-[Sabrina Sajneen](https://www.facebook.com/roza.sajneen)
+[Sabrina Sajneen](https://github.com/rozasajneen)
 
 [Mohsina Tabassum](https://github.com/anish0m)
 
