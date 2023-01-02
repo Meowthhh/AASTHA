@@ -12,8 +12,3 @@ router.get('*', function (req, res, next) {
         {
             console.log(err)
         }
-        else{
-})
-
-
-module.exports = router;
