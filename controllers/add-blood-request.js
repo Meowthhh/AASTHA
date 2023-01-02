@@ -7,10 +7,7 @@ router.use(bodyParser.json());
 
 router.get('*', function (req, res, next) {
     if (req.cookies['email'] == null) {
-        res.redirect('/login');
-    } else {
-        next();
-    }
+        res.redirect('/login')
 });
 
     db.query('INSERT INTO add_blood_requst SET ?',{ user_email: user_email,
