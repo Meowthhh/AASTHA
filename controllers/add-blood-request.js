@@ -1,17 +1,6 @@
 var express = require('express');
 // var home = require('./home');
 
-router.get('/', function (req, res) {
-
-    // console.log(req.cookies['email']);
-    email = req.cookies['email'];
-    console.log(email);
-    db.query("SELECT * FROM `user_info` where email=?", [email], async (err, result) => {
-        console.log(result);
-        res.render('add-blood-request.ejs',{username : result[0].fname});
-    })
-});
-
 router.post('/',function(req,res)
 {
     console.log(req.body);
