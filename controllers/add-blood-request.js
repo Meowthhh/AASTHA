@@ -7,9 +7,6 @@ var bodyParser = require('body-parser');
 var db = require('../config/dbconfig');
 var sweetalert = require('sweetalert2');
 const { check, validationResult } = require('express-validator');
-const jwt = require('jsonwebtoken');
-const bcrypt = require("bcryptjs");
-const { route } = require('./home');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
