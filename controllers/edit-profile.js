@@ -101,6 +101,45 @@ router.post('/', upload.single('upload_image'), function (req, res) {
 
     console.log(req.file)
     
+    if (req.file == undefined) {
+        db.query('UPDATE user_info SET fname=? , lname=? , c_number=? , address=? , street=?  , zip=? , division=? , district=? , city=?  WHERE email=?',
+            [fname, lname, c_number, address, street, zip, division, district, city, email], function (err, result) {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    // console.log(result);
+                    // console.log(req.cookies['email']);
+                    res.redirect('/dashboard');
+                }
+            })
+    }
+    else {
+        db.query("select img FROM user_info where email=?", [email], (err, result) => {
+            // console.log(result[0].img);
+            const name = result[0].img;
+            const path = './public/img/uploaded_imgs/' + name;
+            const img = req.file.filename;
+            console.log(img);
+
+            fs.unlink(path, (err) => {
+                if (err) {
+                    console.error(err)
+                }  //file removed
+            })
+            db.query('UPDATE user_info SET fname=? , lname=? , c_number=? , address=? , street=?  , zip=? , division=? , district=? , city=? , img=?  WHERE email=?',
+                [fname, lname, c_number, address, street, zip, division, district, city, img, email], function (err, results) {
+                    if (err) {
+                        console.log(err);
+                    }
+                    else {
+                        // console.log('chudi');
+                        // console.log(req.cookies['email']);
+                        res.redirect('/dashboard');
+                    }
+                })
+        })
+    }
 
     // console.log(req.body);
     // console.log(req.file);
