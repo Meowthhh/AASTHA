@@ -15,11 +15,7 @@ router.get('*', function (req, res, next) {
 });
 
 router.post('/',function(req,res)
-{
-    console.log(req.body);
-    const user_email  = req.cookies['email'];
-    const pname = req.body.pname;
-    const c_number = req.body.c_number;
+
     const complicaitons = req.body.complications;
     const date = req.body.date;
     const b_g = req.body.b_g;
