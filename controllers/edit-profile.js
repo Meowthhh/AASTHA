@@ -1,5 +1,7 @@
 var express = require('express');
+
 // var home = require('./home');
+
 var mysql = require('mysql');
 var session = require('express-session');
 var router = express.Router();
@@ -17,15 +19,16 @@ const fs = require('fs');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
-
 router.get('*', function (req, res, next) {
-    if (req.cookies['email'] == null) {
+    if (req.cookies['email'] == null) 
+    {
         res.redirect('/login');
-    } else {
+    } 
+    else 
+    {
         next();
     }
 });
-
 
 router.get('/', function (req, res) {
     const email = req.cookies['email'];
@@ -39,11 +42,12 @@ router.get('/', function (req, res) {
 router.get('/get_data', function (request, response, next) {
 
     var type = request.query.type;
-
     var search_query = request.query.parent_value;
+    
     // console.log(search_query, type);
 
-    if (type == 'load_district') {
+    if (type == 'load_district') 
+    {
         // var query = `
         // SELECT DISTINCT district AS Data FROM address
         // WHERE country = '${search_query}' 
@@ -64,7 +68,8 @@ router.get('/get_data', function (request, response, next) {
         });
     }
 
-    if (type == 'load_city') {
+    if (type == 'load_city') 
+    {
         // var query = `
         // SELECT city AS Data FROM address 
         // WHERE district = '${search_query}' 
@@ -97,7 +102,6 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 
-
 router.post('/', upload.single('upload_image'), function (req, res) {
 
     const fname = req.body.fname;
@@ -112,7 +116,9 @@ router.post('/', upload.single('upload_image'), function (req, res) {
     const email = req.cookies['email'];
 
     console.log(req.file)
-    if (req.file == undefined) {
+    
+    if (req.file == undefined) 
+    {
         db.query('UPDATE user_info SET fname=? , lname=? , c_number=? , address=? , street=?  , zip=? , division=? , district=? , city=?  WHERE email=?',
             [fname, lname, c_number, address, street, zip, division, district, city, email], function (err, result) {
                 if (err) {
@@ -125,7 +131,8 @@ router.post('/', upload.single('upload_image'), function (req, res) {
                 }
             })
     }
-    else {
+    else 
+    {
         db.query("select img FROM user_info where email=?", [email], (err, result) => {
             // console.log(result[0].img);
             const name = result[0].img;
