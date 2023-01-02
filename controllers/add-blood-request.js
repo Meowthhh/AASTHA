@@ -10,8 +10,6 @@ router.post('/',function(req,res)
     const complicaitons = req.body.complications;
     const date = req.body.date;
     const b_g = req.body.b_g;
-    const quantity = req.body.quantity;
-    const add_requirement = req.body.add_requirement;
 
     db.query('INSERT INTO add_blood_requst SET ?',{ user_email: user_email,
         pname: pname, c_number: c_number, complications: complicaitons, date: date , b_g : b_g , quantity: quantity, 
