@@ -5,8 +5,6 @@ var session = require('express-session');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
-router.get('*', function (req, res, next) {
-
 router.get('/', function (req, res) {
 
     // console.log(req.cookies['email']);
