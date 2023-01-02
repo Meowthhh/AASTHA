@@ -11,8 +11,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require("bcryptjs")
 const path = require("path");
 const multer = require("multer");
-const { debugPort } = require('process');
-const fs = require('fs');
+
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
