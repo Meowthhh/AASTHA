@@ -2,9 +2,6 @@ var express = require('express');
 // var home = require('./home');
 
 
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(bodyParser.json());
-
 router.get('*', function (req, res, next) {
 
     db.query('INSERT INTO add_blood_requst SET ?',{ user_email: user_email,
