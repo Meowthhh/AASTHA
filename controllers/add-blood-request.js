@@ -49,13 +49,6 @@ router.post('/',function(req,res)
         {
             console.log(err)
         }
-        else{
-           res.redirect('/my-profile/my-request'); 
-        }
-
-    })
-    
-
 })
 
 
