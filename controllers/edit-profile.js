@@ -8,6 +8,15 @@ var db = require('../config/dbconfig');
 var sweetalert = require('sweetalert2');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs")
+const path = require("path");
+const multer = require("multer");
+const { debugPort } = require('process');
+const fs = require('fs');
+
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
+
 
 router.get('*', function (req, res, next) {
     if (req.cookies['email'] == null) {
@@ -30,6 +39,9 @@ router.get('/', function (req, res) {
 router.get('/get_data', function (request, response, next) {
 
     var type = request.query.type;
+
+    var search_query = request.query.parent_value;
+    // console.log(search_query, type);
 
     if (type == 'load_district') {
         // var query = `
@@ -100,7 +112,6 @@ router.post('/', upload.single('upload_image'), function (req, res) {
     const email = req.cookies['email'];
 
     console.log(req.file)
-    
     if (req.file == undefined) {
         db.query('UPDATE user_info SET fname=? , lname=? , c_number=? , address=? , street=?  , zip=? , division=? , district=? , city=?  WHERE email=?',
             [fname, lname, c_number, address, street, zip, division, district, city, email], function (err, result) {
