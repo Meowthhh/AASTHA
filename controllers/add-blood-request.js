@@ -7,9 +7,6 @@ router.post('/',function(req,res)
     const user_email  = req.cookies['email'];
     const pname = req.body.pname;
     const c_number = req.body.c_number;
-    const complicaitons = req.body.complications;
-    const date = req.body.date;
-    const b_g = req.body.b_g;
 
     db.query('INSERT INTO add_blood_requst SET ?',{ user_email: user_email,
         pname: pname, c_number: c_number, complications: complicaitons, date: date , b_g : b_g , quantity: quantity, 
