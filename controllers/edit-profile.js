@@ -31,9 +31,6 @@ router.get('/get_data', function (request, response, next) {
 
     var type = request.query.type;
 
-    var search_query = request.query.parent_value;
-    // console.log(search_query, type);
-
     if (type == 'load_district') {
         // var query = `
         // SELECT DISTINCT district AS Data FROM address
