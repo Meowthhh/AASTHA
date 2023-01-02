@@ -88,9 +88,22 @@ router.post('/my-request/resolve/:id', function (req, res) {
         })
 })
 
-
 router.post('/my-request/view', function (req, res) {
+ 
     console.log(req.body);
+    const id = req.body.id;
+    const email =req.cookies['email'];
+    db.query("SELECT * FROM `user_info` where email=?", [email], async (err, results) => {
+            
+    db.query('SELECT * FROM `add_blood_requst` where id=?', [id], (err, result) => {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                res.render('view-donation', { data: result[0] ,user:results[0]})
+            }
+        })
+    })
 })
 
 
