@@ -4,8 +4,6 @@ var mysql = require('mysql');
 var session = require('express-session');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var db = require('../config/dbconfig');
-var sweetalert = require('sweetalert2');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
