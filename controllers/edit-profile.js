@@ -9,11 +9,6 @@ var sweetalert = require('sweetalert2');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 
-
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(bodyParser.json());
-
-
 router.get('*', function (req, res, next) {
     if (req.cookies['email'] == null) {
         res.redirect('/login');
