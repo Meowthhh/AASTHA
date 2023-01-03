@@ -15,7 +15,7 @@ router.use(bodyParser.json());
 
 router.get('*', function (req, res, next) {
     if (req.cookies['email'] == null) {
-        res.redirect('/login');
+        res.redirect();
 });
 
 router.get('/', (req, res) => {
