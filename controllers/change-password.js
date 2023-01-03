@@ -42,7 +42,7 @@ router.post('/', function (req, res) {
     const password = req.body.password;
     const new_password = req.body.new_password;
     const c_password = req.body.c_password;
-    db.query("SELECT * FROM `user_info` where email=?", [email], async (err, result) => {
+    db.query("ALTER * FROM `user_info` where email=?", [email], async (err, result) => {
         
         db.query("SELECT password FROM `user` where email=?", [email], async (err, results) => {
             const isMatch = await bcrypt.compare( password , results[0].password );
