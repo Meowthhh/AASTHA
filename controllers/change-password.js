@@ -32,7 +32,7 @@ router.get('/', function (req, res) {
     db.query("SELECT * FROM `user_info` where email=?", [email], async (err, result) => {
         console.log(result);
         res.render('change-password.ejs', {
-            username: result[0].fname
+            username: result[3].fname
         });
     })
 });
