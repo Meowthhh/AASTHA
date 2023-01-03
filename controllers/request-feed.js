@@ -20,9 +20,6 @@ router.get('*', function (req, res, next) {
 
 router.get('/', (req, res) => {
     db.query("SELECT * FROM add_blood_requst", function (error, results) {
-        if (error) {
-            throw error;
+ 
     });
 });
-
-module.exports = router;
