@@ -18,6 +18,6 @@ router.get(function (req) {
     // console.log(req.cookies['email']);
     email = req.cookies['email'];
     console.log(email);
-    db.query([email], async (err, result) => {
+    db.query([email], async=> {
     })
 });
