@@ -10,7 +10,7 @@ const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 
 
-router.get('*', function (req, res, next) {
+router.get('*', function (res, next) {
 });
 
 router.get('/', function (req) {
