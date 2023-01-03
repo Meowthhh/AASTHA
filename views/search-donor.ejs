@@ -249,12 +249,6 @@ function fetch_data(parent_element, child_element, type) {
             child_element.innerHTML = html;
         });
 }
-_('division').onchange = function () {
-
-    fetch_data(_('division'), _('district'), 'load_district');
-
-};
-
 _('district').onchange = function () {
 
     fetch_data(_('district'), _('city'), 'load_city');
