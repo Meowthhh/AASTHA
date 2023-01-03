@@ -25,11 +25,6 @@ router.get('/', (req, res) => {
     db.query("SELECT * FROM add_blood_requst", function (error, results) {
         if (error) {
             throw error;
-        }
-        else {
-            console.log(results)
-            res.render('request-feed.ejs', { data: results });
-        }
     });
 });
 
