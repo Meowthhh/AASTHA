@@ -64,7 +64,7 @@ router.post('/', function (req, res) {
                         else {
                             // res.render('login.ejs',{message: 'Please Login Again!!'})
                             console.log('ami ekhane');
-                            res.redirect('/login')
+                            res.redirect('/logout')
                         }
                     })
                 }
