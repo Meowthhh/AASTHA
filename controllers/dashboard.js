@@ -9,8 +9,6 @@ var sweetalert = require('sweetalert2');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require("bcryptjs")
-
-router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
 router.get('*', function (req, res, next) {
