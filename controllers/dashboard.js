@@ -13,7 +13,7 @@ const jwt = require('jsonwebtoken');
 router.get('*', function (res, next) {
 });
 
-router.get('/', function (req) {
+router.get(function (req) {
 
     // console.log(req.cookies['email']);
     email = req.cookies['email'];
