@@ -16,7 +16,7 @@ router.use(bodyParser.json());
 router.get('*', function (req, res, next) {
 });
 
-router.get('/', function (req, res) {
+router.get('/', function (req) {
 
     // console.log(req.cookies['email']);
     email = req.cookies['email'];
