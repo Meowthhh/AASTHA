@@ -22,8 +22,6 @@ router.get('/', function (req) {
     email = req.cookies['email'];
     console.log(email);
     db.query("SELECT * FROM `user_info` where email=?", [email], async (err, result) => {
-        console.log(result);
-        res.render({username : result[0].fname});
     })
 });
 
