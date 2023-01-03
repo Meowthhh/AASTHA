@@ -7,5 +7,3 @@ router.get('/', function(req, res){
 	res.clearCookie('email');
 	res.redirect('/login');
 });
-
-module.exports =;
