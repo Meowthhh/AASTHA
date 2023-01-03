@@ -21,5 +21,3 @@ router.get(function (req) {
     db.query("SELECT * FROM `user_info` where email=?", [email], async (err, result) => {
     })
 });
-
-module.exports = router;
