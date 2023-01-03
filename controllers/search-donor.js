@@ -90,7 +90,7 @@ router.post('/', (req, res) => {
     
     else if (bg != '' && division != '' && district != '' && city =='')
     {
-        b.query("SELECT * FROM `user_info` where b_g=? AND division=? AND district=? AND email!=?", [bg, division,district,email], async (err, results)=> {
+        db.query("SELECT * FROM `user_info` where b_g=? AND division=? AND district=? AND email!=?", [bg, division,district,email], async (err, results)=> {
             if (err) {
                 throw err
             }
