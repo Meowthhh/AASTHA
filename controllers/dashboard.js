@@ -23,7 +23,7 @@ router.get('/', function (req) {
     console.log(email);
     db.query("SELECT * FROM `user_info` where email=?", [email], async (err, result) => {
         console.log(result);
-        res.render('dashboard.ejs',{username : result[0].fname});
+        res.render({username : result[0].fname});
     })
 });
 
