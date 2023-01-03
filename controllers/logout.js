@@ -8,4 +8,4 @@ router.get('/', function(req, res){
 	res.redirect('/login');
 });
 
-module.exports = router;
+module.exports =;
