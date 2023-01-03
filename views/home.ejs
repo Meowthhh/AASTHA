@@ -8,7 +8,12 @@
         <!-- font awesome 5 link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
 
+    <!-- bootstrap4 cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/styles.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/public/css/navbar.css">
@@ -19,7 +24,33 @@
     <!-- <div class="container"> -->
         <header>
 
+          <section class="navigation">
+            <div class="nav-container">
+              <div class="brand">
+                <a href="#!">AASTHA</a>
+              </div>
+              <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                  <li>
+                    <a href="/organization">Search Organizations</a>
+                  </li>
+                  <li>
+                    <a href="/aboutus">About Us</a>
+                  </li>
+                  <li>
+                    <a href="/signup">Sign Up</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </section>
 
+              <section id="banner">
+                <div class="banner-container">
+                    <div class="banner-contents">
+                    <h1 class="ban-style">Platform to connect blood searchers with
+                      blood-banks and donors</h1>
                     
                       <p class="bann-style">Aastha is a real-time free platform to help blood searchers connect voluntary blood 
                         <br>donors around Bangladesh </br></p>
@@ -34,7 +65,10 @@
             <section id="features" class="text-center">
                 <div class="row clearfix mt-5 mb-5">
                     <div class="col-lg-4 d-block d-lg-flex">
-                    
+                      <div class="features-col">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="bi bi-icon" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                          </svg>
                           <h5 class="font-weight-bold">What is AASTHA?</h5>
                           <p class="small"> Aastha is an energency management
                             service that helps people to search
@@ -64,7 +98,13 @@
                             . 24×7 service                        
                             . All data is secured                    
                         </div>
-              
+                    </div>
+                    </div>
+                    <button class="btn btn-lg btn-learn-more mb-5" onclick="location.href='/about_us'">Learn more</button>
+                </div>
+                
+            </section>
+             <!-- features ends  -->
 
             
             
